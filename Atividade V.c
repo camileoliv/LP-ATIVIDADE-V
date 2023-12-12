@@ -65,7 +65,6 @@ int main()
                 printf("Digite o %iº produto: ", i + 1);
                 gets(entrada[i].nome);
                 strcpy(atual[i].nome, entrada[i].nome);
-                contador++;
 
                 printf("Digite o preço do %iº produto: ", i + 1);
                 scanf("%f", &entrada[i].preco);
@@ -76,6 +75,7 @@ int main()
                 atual[i].estoqueA = entrada[i].estoque;
 
                 system("cls || clear");
+                contador++;
             }
             break;
 
@@ -125,7 +125,6 @@ int main()
                 printf("Preço: %.2f\n", atual[i].preco);
                 automatizacao(atual[i].estoqueA, vendasQuan);
             }
-
             break;
 
         case 4:
@@ -133,13 +132,13 @@ int main()
             printf("Quadro de funcionários. \n");
 
             printf("Quantidade de funcionários trabalhando no estoque: ");
-            scanf("%d",&funcionarios);
+            scanf("%d", &funcionarios);
 
-            for ( g = 0; g < funcionarios; g++)
+            for (g = 0; g < funcionarios; g++)
             {
                 fflush(stdin);
 
-                printf("Nome do %d funcionário: ",g+1);
+                printf("Nome do %d funcionário: ", g + 1);
                 gets(nomeF);
 
                 fflush(stdin);
@@ -148,7 +147,7 @@ int main()
                 gets(identificacao);
 
                 printf("\n");
-            }        
+            }
 
             system("cls || clear");
 
