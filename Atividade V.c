@@ -34,8 +34,8 @@ int main()
     struct produto saida[TAM];
     struct dados atual[TAM];
 
-    int code, quantidade, contador, i, j, vendasDaily, vendasQuan;
-    char diaReferencia[10];
+    int code, quantidade, contador, i, j, g, vendasDaily, vendasQuan, funcionarios;
+    char diaReferencia[10], nomeF[200], identificacao[200];
     float ganhos;
 
     setlocale(LC_ALL, "portuguese");
@@ -48,6 +48,7 @@ int main()
         printf("2- Saída de produtos. \n");
         printf("3- Inventário. \n");
         printf("4- Funcionários presentes no site. \n");
+        printf("5- Sair do programa. \n");
         printf("Resposta: ");
         scanf("%i", &code);
         system("cls || clear");
@@ -73,6 +74,7 @@ int main()
                 printf("Digite a quantidade do %iº produto: ", i + 1);
                 scanf("%i", &entrada[i].estoque);
                 atual[i].estoqueA = entrada[i].estoque;
+
                 system("cls || clear");
             }
             break;
@@ -111,6 +113,8 @@ int main()
                 break;
             }
 
+            system("cls || clear");
+
             break;
 
         case 3:
@@ -126,15 +130,34 @@ int main()
 
         case 4:
             fflush(stdin);
+            printf("Quadro de funcionários. \n");
 
-            /*/printf("");/*/
+            printf("Quantidade de funcionários trabalhando no estoque: ");
+            scanf("%d",&funcionarios);
+
+            for ( g = 0; g < funcionarios; g++)
+            {
+                fflush(stdin);
+
+                printf("Nome do %d funcionário: ",g+1);
+                gets(nomeF);
+
+                fflush(stdin);
+
+                printf("Identificação do crachá: ");
+                gets(identificacao);
+
+                printf("\n");
+            }        
+
+            system("cls || clear");
 
             break;
 
         default:
             break;
         }
-    } while (code != 4);
+    } while (code != 5);
 
     return 0;
 }
